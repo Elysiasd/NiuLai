@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true">
+  <!-- 低模牛头正脸（NL-53 基准型）：12 面硬边，故意不对称的眼睛。
+       用于输入区水印与小图标位，透明底以便叠任意背景。 -->
+  <polygon points="8,20 32,6 32,30" fill="#9e9e9e"/>
+  <polygon points="56,20 32,6 32,30" fill="#8a8a8a"/>
+  <polygon points="8,20 32,30 20,52" fill="#a8a8a8"/>
+  <polygon points="56,20 32,30 44,52" fill="#909090"/>
+  <polygon points="20,52 44,52 32,62" fill="#23b45a"/>
+  <polygon points="4,14 14,8 12,22" fill="#7a7a7a"/>
+  <polygon points="60,14 50,8 52,22" fill="#7a7a7a"/>
+  <circle cx="24" cy="26" r="3.2" fill="#141414"/>
+  <circle cx="40" cy="26" r="2.1" fill="#141414"/>
+</svg>

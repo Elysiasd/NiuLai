@@ -70,11 +70,26 @@ check("preset: 文件齐全且 persona 行就位", () => {
   assert.match(agent, /牛来/);
   assert.ok(!agent.includes("\t"), "YAML 不允许制表符");
 });
-check("client: v0.3 特性标记齐全（盗摄滤镜/票房计数/控制台 API）", () => {
+check("client: v0.3 特性标记齐全（盗摄滤镜/票房计数/控制台 API/常驻布景）", () => {
   const client = readFileSync(join(root, "lib", "client.js"), "utf8");
-  for (const marker of ["niulai-pirate", "niulai-boxoffice", "window.niulai", "buildPoster", "MILESTONES"]) {
+  for (const marker of [
+    "niulai-pirate",
+    "niulai-boxoffice",
+    "window.niulai",
+    "buildPoster",
+    "MILESTONES",
+    "niulai-decor",
+    "buildDecor",
+    "nd-lobby",
+  ]) {
     assert.ok(client.includes(marker), `缺特性标记: ${marker}`);
   }
+});
+check("assets: decor 轮播覆盖全部 8 张栅格", () => {
+  const manifest = JSON.parse(readFileSync(join(root, "assets", "manifest.json"), "utf8"));
+  const rasters = readdirSync(join(root, "assets", "raster"));
+  assert.equal(manifest.decor.rotation.length, rasters.length, "轮播条目数应与栅格文件数一致");
+  for (const item of manifest.decor.rotation) assert.ok(item.title, `轮播项缺标题: ${item.img}`);
 });
 
 // ── 4. 宿主半部烟囱测试 ──────────────────────────────────────────────────
@@ -158,6 +173,8 @@ await (async () => {
   const manifest = JSON.parse(readFileSync(join(assetsRoot, "manifest.json"), "utf8"));
   const refs = new Set(["manifest.json"]);
   for (const key of ["poster", "cow", "audience"]) refs.add(manifest.premiere[key]);
+  for (const item of manifest.decor.rotation) refs.add(item.img);
+  refs.add("sprites/cow-head.svg");
   refs.add(manifest.stamp);
   refs.add(manifest.audienceStrip);
   refs.add(manifest.danmaku);

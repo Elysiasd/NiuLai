@@ -7,6 +7,19 @@
     "audience": "sprites/audience-strip.svg",
     "tagline": "欢迎入场。这里没人管盗摄，也没人管你笑多大声。"
   },
+  "decor": {
+    "rotationMs": 24000,
+    "rotation": [
+      { "img": "raster/premiere-poster.jpg", "title": "治愈系水墨国风", "lang": "A" },
+      { "img": "raster/card-full-house.jpg", "title": "满座的抽象同类", "lang": "C" },
+      { "img": "raster/card-342.jpg", "title": "首日票房 342 元", "lang": "B" },
+      { "img": "raster/card-lark.jpg", "title": "云雀入梦", "lang": "A" },
+      { "img": "raster/card-polygons.jpg", "title": "用多边形搭建", "lang": "B" },
+      { "img": "raster/card-kline.jpg", "title": "排片暴涨 2300%", "lang": "B" },
+      { "img": "raster/card-coin.jpg", "title": "良币的沉默", "lang": "D" },
+      { "img": "raster/crude-cow.jpg", "title": "纯手搓，无 AI", "lang": "B" }
+    ]
+  },
   "stamp": "seals/shousa.svg",
   "audienceStrip": "sprites/audience-strip.svg",
   "danmaku": "fx/danmaku.json",
