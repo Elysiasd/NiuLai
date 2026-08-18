@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 260" aria-hidden="true">
+  <!-- 水墨远山山脊：海报承诺的「治愈系水墨国风」，铺在界面底边。
+       三层浓淡墨阶 + 干笔飞白，纯路径无位图。 -->
+  <defs>
+    <linearGradient id="far" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8a8272" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#8a8272" stop-opacity="0.12"/>
+    </linearGradient>
+    <linearGradient id="mid" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#5f5a4e" stop-opacity="0.72"/>
+      <stop offset="1" stop-color="#5f5a4e" stop-opacity="0.18"/>
+    </linearGradient>
+    <linearGradient id="near" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2f2a24" stop-opacity="0.82"/>
+      <stop offset="1" stop-color="#2f2a24" stop-opacity="0.3"/>
+    </linearGradient>
+  </defs>
+  <!-- 远峰 -->
+  <path fill="url(#far)" d="M0 172 L84 132 L146 158 L232 96 L308 140 L392 104 L470 150 L556 118 L648 156 L742 112 L836 148 L930 108 L1024 152 L1118 120 L1214 158 L1310 124 L1404 160 L1500 130 L1600 166 L1600 260 L0 260 Z"/>
+  <!-- 中景 -->
+  <path fill="url(#mid)" d="M0 208 L96 178 L188 200 L286 160 L378 196 L474 168 L570 204 L668 174 L766 206 L864 180 L962 210 L1060 182 L1158 212 L1256 186 L1354 214 L1452 190 L1550 216 L1600 200 L1600 260 L0 260 Z"/>
+  <!-- 近坡 + 一条溪的干笔飞白 -->
+  <path fill="url(#near)" d="M0 238 L120 224 L246 240 L372 220 L498 238 L624 222 L750 242 L876 226 L1002 244 L1128 228 L1254 246 L1380 230 L1506 246 L1600 234 L1600 260 L0 260 Z"/>
+  <g stroke="#f7f2e7" stroke-opacity="0.5" stroke-linecap="round" fill="none">
+    <path d="M210 250 q60 -8 118 2" stroke-width="2.4"/>
+    <path d="M690 252 q72 -10 140 3" stroke-width="2"/>
+    <path d="M1180 250 q66 -9 128 2" stroke-width="2.2"/>
+  </g>
+</svg>

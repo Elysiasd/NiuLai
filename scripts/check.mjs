@@ -175,6 +175,7 @@ await (async () => {
   for (const key of ["poster", "cow", "audience"]) refs.add(manifest.premiere[key]);
   for (const item of manifest.decor.rotation) refs.add(item.img);
   refs.add("sprites/cow-head.svg");
+  refs.add("sprites/ridge.svg");
   refs.add(manifest.stamp);
   refs.add(manifest.audienceStrip);
   refs.add(manifest.danmaku);
