@@ -1,13 +1,33 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true">
-  <!-- 低模牛头正脸（NL-53 基准型）：12 面硬边，故意不对称的眼睛。
-       用于输入区水印与小图标位，透明底以便叠任意背景。 -->
-  <polygon points="8,20 32,6 32,30" fill="#9e9e9e"/>
-  <polygon points="56,20 32,6 32,30" fill="#8a8a8a"/>
-  <polygon points="8,20 32,30 20,52" fill="#a8a8a8"/>
-  <polygon points="56,20 32,30 44,52" fill="#909090"/>
-  <polygon points="20,52 44,52 32,62" fill="#23b45a"/>
-  <polygon points="4,14 14,8 12,22" fill="#7a7a7a"/>
-  <polygon points="60,14 50,8 52,22" fill="#7a7a7a"/>
-  <circle cx="24" cy="26" r="3.2" fill="#141414"/>
-  <circle cx="40" cy="26" r="2.1" fill="#141414"/>
+  <!-- 低模牛头正脸（NL-53 基准型 v2）：硬边三角面，故意不对称的眼睛。
+       配色对齐《牛来》公开物料里主角牛的特征——橙色皮毛、奶白大口鼻、
+       深棕粗眉、小短角——按特征原创重绘，不描摹任何影片画面。
+       用于右侧探头水印与 hero 图标位，透明底以便叠任意背景。 -->
+  <!-- 耳（横出）与内耳 -->
+  <polygon points="2,24 13,17 13,28" fill="#c9662a"/>
+  <polygon points="62,24 51,17 51,28" fill="#b85c25"/>
+  <polygon points="5,23 11,20 11,26" fill="#8a5a74"/>
+  <polygon points="59,23 53,20 53,26" fill="#7c4f66"/>
+  <!-- 小短角（原作的角很小） -->
+  <polygon points="14,12 20,4 23,14" fill="#c99a55"/>
+  <polygon points="50,12 44,4 41,14" fill="#b98a4e"/>
+  <!-- 额头与脸颊：三档橙色硬边光影 -->
+  <polygon points="15,9 49,9 32,24" fill="#f2954d"/>
+  <polygon points="15,9 12,26 32,24" fill="#e07b35"/>
+  <polygon points="49,9 52,26 32,24" fill="#d06f2e"/>
+  <polygon points="12,26 21,45 32,24" fill="#e8863d"/>
+  <polygon points="52,26 43,45 32,24" fill="#c9662a"/>
+  <polygon points="21,45 43,45 32,24" fill="#db7530"/>
+  <!-- 奶白大口鼻：两块硬边拼出下半张脸 -->
+  <polygon points="19,43 45,43 41,57 23,57" fill="#f6ead8"/>
+  <polygon points="23,57 41,57 32,63" fill="#e9dcc2"/>
+  <!-- 深棕粗眉（微斜，辨识度最高的特征） -->
+  <polygon points="17,28 28,25 28,29 18,31" fill="#5a3b22"/>
+  <polygon points="36,25 47,28 46,31 36,29" fill="#5a3b22"/>
+  <!-- 眼睛故意不对称 -->
+  <circle cx="24" cy="35" r="3.4" fill="#3a2a1c"/>
+  <circle cx="40" cy="35" r="2.3" fill="#3a2a1c"/>
+  <!-- 鼻孔：一点暗紫，呼应海报里的紫色蹄 -->
+  <ellipse cx="27.5" cy="50.5" rx="2" ry="2.6" fill="#6b4d5e"/>
+  <ellipse cx="36.5" cy="50.5" rx="2" ry="2.6" fill="#6b4d5e"/>
 </svg>
