@@ -70,6 +70,12 @@ check("preset: 文件齐全且 persona 行就位", () => {
   assert.match(agent, /牛来/);
   assert.ok(!agent.includes("\t"), "YAML 不允许制表符");
 });
+check("client: v0.3 特性标记齐全（盗摄滤镜/票房计数/控制台 API）", () => {
+  const client = readFileSync(join(root, "lib", "client.js"), "utf8");
+  for (const marker of ["niulai-pirate", "niulai-boxoffice", "window.niulai", "buildPoster", "MILESTONES"]) {
+    assert.ok(client.includes(marker), `缺特性标记: ${marker}`);
+  }
+});
 
 // ── 4. 宿主半部烟囱测试 ──────────────────────────────────────────────────
 await (async () => {

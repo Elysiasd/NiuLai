@@ -1,6 +1,6 @@
 {
   "name": "niulai",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "NiuLai (牛来) plugin for DeepSeek Harness: ink-wash 《牛来》 art-style theme, meme turn-status phrases, and the 牛来模式 agent preset. 牛来了！",
   "type": "module",
   "main": "lib/index.js",
