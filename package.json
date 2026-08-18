@@ -1,0 +1,48 @@
+{
+  "name": "niulai",
+  "version": "0.1.0",
+  "description": "NiuLai (牛来) plugin for DeepSeek Harness: ink-wash 《牛来》 art-style theme, meme turn-status phrases, and the 牛来模式 agent preset. 牛来了！",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./presets/*": "./presets/*",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "presets",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [],
+      "immediately": true
+    }
+  },
+  "scripts": {
+    "test": "node scripts/check.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yujiezhang-ops/NiuLai.git"
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "niulai",
+    "theme",
+    "agent-preset"
+  ],
+  "license": "MIT"
+}

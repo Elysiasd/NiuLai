@@ -1,0 +1,7 @@
+# Secrets — never commit. `Web` holds the bing-cn-search MCP API key,
+# `.mcp.json` embeds it for local MCP configuration.
+Web
+.mcp.json
+
+node_modules/
+.DS_Store

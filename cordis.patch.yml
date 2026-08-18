@@ -1,0 +1,6 @@
+# NiuLai bundle patch：向所选 profile 插入唯一一行宿主插件。
+# 浏览器半部（水墨主题 + 状态语）不需要自己的行——它由 package.json 的
+# dsh.client manifest 声明，Web 端通过 `niulai/client` 导出自动加载。
+- insert:
+    - id: niulai
+      name: niulai
