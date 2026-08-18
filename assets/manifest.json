@@ -1,0 +1,72 @@
+{
+  "version": 1,
+  "base": "/plugins/niulai/assets/",
+  "premiere": {
+    "poster": "raster/premiere-poster.jpg",
+    "cow": "raster/crude-cow.jpg",
+    "audience": "sprites/audience-strip.svg",
+    "tagline": "欢迎入场。这里没人管盗摄，也没人管你笑多大声。"
+  },
+  "stamp": "seals/shousa.svg",
+  "audienceStrip": "sprites/audience-strip.svg",
+  "danmaku": "fx/danmaku.json",
+  "seals": {
+    "niulai": "seals/niulai.svg",
+    "shousa": "seals/shousa.svg",
+    "jianzheng": "seals/jianzheng.svg",
+    "hulai": "seals/hulai.svg",
+    "buhuang": "seals/buhuang.svg"
+  },
+  "cards": [
+    {
+      "id": "compliance",
+      "title": "牛来合规认证",
+      "line": "合规是底线，不是品味。",
+      "svg": "cards/compliance.svg",
+      "lang": "B",
+      "firstInSession": true
+    },
+    {
+      "id": "full-house",
+      "title": "满座的抽象同类",
+      "line": "坐下吧，这里全是同类。",
+      "bg": "raster/card-full-house.jpg",
+      "lang": "C"
+    },
+    {
+      "id": "day-one-342",
+      "title": "首日票房 342 元",
+      "line": "包场，是一种孤独的荣耀。",
+      "bg": "raster/card-342.jpg",
+      "lang": "B"
+    },
+    {
+      "id": "polygons",
+      "title": "用多边形搭建",
+      "line": "以前用砖头，现在用多边形，都是搭建。",
+      "bg": "raster/card-polygons.jpg",
+      "lang": "B"
+    },
+    {
+      "id": "good-coin",
+      "title": "良币的沉默",
+      "line": "这场没人笑。因为做得好的那部，没排上片。",
+      "bg": "raster/card-coin.jpg",
+      "lang": "D"
+    },
+    {
+      "id": "lark-dream",
+      "title": "云雀入梦",
+      "line": "梦是从荒漠飞来的。",
+      "bg": "raster/card-lark.jpg",
+      "lang": "A"
+    },
+    {
+      "id": "kline",
+      "title": "排片暴涨 2300%",
+      "line": "不是电影上涨了，是大家决定一起喜欢它。",
+      "bg": "raster/card-kline.jpg",
+      "lang": "B"
+    }
+  ]
+}

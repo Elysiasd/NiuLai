@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 140" aria-hidden="true">
+  <defs>
+    <filter id="rough" x="-8%" y="-8%" width="116%" height="116%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.09" numOctaves="2" seed="11" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="3"/>
+    </filter>
+  </defs>
+  <g transform="rotate(2 70 70)" filter="url(#rough)">
+    <rect x="8" y="8" width="124" height="124" rx="12" fill="#b3392f"/>
+    <text x="43" y="60" text-anchor="middle" font-family="'Kaiti SC','STKaiti',KaiTi,serif" font-size="40" font-weight="700" fill="#f7f2e7">见</text>
+    <text x="97" y="60" text-anchor="middle" font-family="'Kaiti SC','STKaiti',KaiTi,serif" font-size="40" font-weight="700" fill="#f7f2e7">证</text>
+    <text x="43" y="116" text-anchor="middle" font-family="'Kaiti SC','STKaiti',KaiTi,serif" font-size="40" font-weight="700" fill="#f7f2e7">历</text>
+    <text x="97" y="116" text-anchor="middle" font-family="'Kaiti SC','STKaiti',KaiTi,serif" font-size="40" font-weight="700" fill="#f7f2e7">史</text>
+  </g>
+</svg>

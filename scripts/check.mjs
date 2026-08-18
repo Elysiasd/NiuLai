@@ -9,7 +9,7 @@
  */
 import assert from "node:assert/strict";
 import { spawnSync } from "node:child_process";
-import { existsSync, mkdtempSync, readFileSync, rmSync } from "node:fs";
+import { existsSync, mkdtempSync, readdirSync, readFileSync, rmSync, statSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { dirname, join } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
@@ -80,6 +80,7 @@ await (async () => {
     const host = await import(pathToFileURL(join(root, "lib", "index.js")).href);
     const sections = [];
     const effects = [];
+    const routes = [];
     const ctx = {
       effect(fn) {
         effects.push(fn());
@@ -90,12 +91,23 @@ await (async () => {
           return () => sections.pop();
         },
       },
+      webServer: {
+        register(route) {
+          routes.push(route);
+          return () => {};
+        },
+      },
       logger: { info() {}, warn: (m) => console.error("     [host warn]", m) },
     };
     check("host: apply() 同步 preset 到 $DSH_HOME/.agent-presets", () => {
       host.apply(ctx);
       assert.ok(existsSync(join(home, ".agent-presets", "niulai", "agent.cordis.yml")));
       assert.ok(existsSync(join(home, ".agent-presets", "niulai", "preset.yml")));
+    });
+    check("host: assets 逐文件注册 exact 路由（含 manifest.json）", () => {
+      assert.ok(routes.length >= 15, `路由数异常: ${routes.length}`);
+      assert.ok(routes.every((r) => r.kind === "exact" && typeof r.handler === "function"));
+      assert.ok(routes.some((r) => r.path === "/plugins/niulai/assets/manifest.json"));
     });
     check("host: 注册 plugin:niulai 声明段落，effect 返回清理函数", () => {
       assert.equal(sections.length, 1);
@@ -133,6 +145,61 @@ await (async () => {
     delete globalThis.window;
   }
 })();
+
+// ── 6. 素材库：manifest 完整性 / SVG 卫生 / 体积红线 ─────────────────────
+{
+  const assetsRoot = join(root, "assets");
+  const manifest = JSON.parse(readFileSync(join(assetsRoot, "manifest.json"), "utf8"));
+  const refs = new Set(["manifest.json"]);
+  for (const key of ["poster", "cow", "audience"]) refs.add(manifest.premiere[key]);
+  refs.add(manifest.stamp);
+  refs.add(manifest.audienceStrip);
+  refs.add(manifest.danmaku);
+  for (const p of Object.values(manifest.seals)) refs.add(p);
+  for (const c of manifest.cards) {
+    if (c.svg) refs.add(c.svg);
+    if (c.bg) refs.add(c.bg);
+  }
+  check("assets: manifest 引用的文件全部存在", () => {
+    for (const rel of refs) assert.ok(existsSync(join(assetsRoot, rel)), `缺文件: ${rel}`);
+  });
+  check("assets: 卡组含 firstInSession 合规卡且文案齐全", () => {
+    assert.ok(manifest.cards.some((c) => c.firstInSession));
+    for (const c of manifest.cards) {
+      assert.ok(c.id && c.title && c.line, `卡片字段不全: ${c.id}`);
+      assert.ok(c.svg || c.bg, `卡片无画面: ${c.id}`);
+    }
+  });
+
+  const walk = (dir) => {
+    const out = [];
+    for (const entry of readdirSync(dir, { withFileTypes: true })) {
+      const p = join(dir, entry.name);
+      if (entry.isDirectory()) out.push(...walk(p));
+      else out.push(p);
+    }
+    return out;
+  };
+  const files = walk(assetsRoot);
+  check("assets: SVG 无脚本、无外链资源", () => {
+    for (const f of files.filter((p) => p.endsWith(".svg"))) {
+      const body = readFileSync(f, "utf8");
+      assert.ok(!body.includes("<script"), `${f} 含 <script`);
+      assert.ok(!/(?:href|src)\s*=\s*"https?:/.test(body), `${f} 引用外链资源`);
+      assert.ok(!body.includes("javascript:"), `${f} 含 javascript: URL`);
+    }
+  });
+  check("assets: 体积红线（单 SVG ≤30KB，单栅格 ≤300KB，总量 ≤1.8MB）", () => {
+    let total = 0;
+    for (const f of files) {
+      const size = statSync(f).size;
+      total += size;
+      if (f.endsWith(".svg")) assert.ok(size <= 30 * 1024, `${f} 超 30KB: ${size}`);
+      if (/\.(jpe?g|png|webp)$/.test(f)) assert.ok(size <= 300 * 1024, `${f} 超 300KB: ${size}`);
+    }
+    assert.ok(total <= 1.8 * 1024 * 1024, `assets/ 总量超 1.8MB: ${total}`);
+  });
+}
 
 console.log(failures === 0 ? "\n全部通过：牛来了！" : `\n${failures} 项失败`);
 process.exit(failures === 0 ? 0 : 1);

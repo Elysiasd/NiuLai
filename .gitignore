@@ -5,3 +5,8 @@ Web
 
 node_modules/
 .DS_Store
+# 本地 Claude Code 预览配置，与插件无关
+.claude/
+# 生图暂存区：原始 PNG 与代理返回的 sidecar 元数据，压缩后才进 assets/
+output/
+

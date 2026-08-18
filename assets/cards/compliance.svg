@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" aria-hidden="true">
+  <!-- 牛标合规卡 · 梗浓档。原创戏仿：不复刻任何真实公映许可证的构图、
+       配色、纹样与真实编号格式；绿框 + 低模牛头 + 自嘲文案。 -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f2fbf2"/>
+      <stop offset="1" stop-color="#dff0df"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="360" rx="18" fill="url(#bg)"/>
+  <rect x="14" y="14" width="612" height="332" rx="12" fill="none" stroke="#1f7a3d" stroke-width="4"/>
+  <rect x="26" y="26" width="588" height="308" rx="8" fill="none" stroke="#1f7a3d" stroke-width="1.5" stroke-dasharray="6 5"/>
+
+  <!-- 低模牛头浮雕（12 面） -->
+  <g transform="translate(288 58) scale(1.05)" opacity="0.92">
+    <polygon points="8,20 32,6 32,30"  fill="#2e8b50"/>
+    <polygon points="56,20 32,6 32,30" fill="#277945"/>
+    <polygon points="8,20 32,30 20,52" fill="#35995a"/>
+    <polygon points="56,20 32,30 44,52" fill="#2a7f4a"/>
+    <polygon points="20,52 44,52 32,62" fill="#1f6b3e"/>
+    <polygon points="4,14 14,8 12,22"  fill="#1f6b3e"/>
+    <polygon points="60,14 50,8 52,22" fill="#1f6b3e"/>
+    <circle cx="24" cy="26" r="3.4" fill="#0e3a20"/>
+    <circle cx="40" cy="26" r="2.2" fill="#0e3a20"/>
+  </g>
+
+  <text x="320" y="168" text-anchor="middle" font-family="'Kaiti SC','STKaiti',KaiTi,serif" font-size="38" font-weight="700" fill="#1f5c33">牛来合规认证</text>
+  <text x="320" y="206" text-anchor="middle" font-family="'Kaiti SC','STKaiti',KaiTi,serif" font-size="17" fill="#2b6e42">牛审抽字〔2026〕第 0342 号</text>
+  <line x1="150" y1="228" x2="490" y2="228" stroke="#1f7a3d" stroke-width="1" opacity="0.5"/>
+  <text x="320" y="262" text-anchor="middle" font-family="'Kaiti SC','STKaiti',KaiTi,serif" font-size="19" fill="#20492f">本会话已通过全部 13 项检查（语法层面）</text>
+  <text x="320" y="296" text-anchor="middle" font-family="'Kaiti SC','STKaiti',KaiTi,serif" font-size="16" fill="#4a7a58">画质与品味，概不在检查范围。</text>
+</svg>
