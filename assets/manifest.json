@@ -23,6 +23,7 @@
   "stamp": "seals/shousa.svg",
   "audienceStrip": "sprites/audience-strip.svg",
   "danmaku": "fx/danmaku.json",
+  "landscape": "sprites/landscape.svg",
   "seals": {
     "niulai": "seals/niulai.svg",
     "shousa": "seals/shousa.svg",

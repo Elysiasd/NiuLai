@@ -1,33 +1,23 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true">
-  <!-- 低模牛头正脸（NL-53 基准型 v2）：硬边三角面，故意不对称的眼睛。
-       配色对齐《牛来》公开物料里主角牛的特征——橙色皮毛、奶白大口鼻、
-       深棕粗眉、小短角——按特征原创重绘，不描摹任何影片画面。
+  <!-- 低模牛头正脸（v3 电影配色）：硬边三角面平涂，明亮橙 + 米黄嘴鼻。
+       配色取自《牛来》真实电影截图——主角橙色 #FF9966 系、米黄嘴鼻 #FFE4C4，
+       简化到 6 个硬边平涂三角形，模拟 PS1 低质 3D 质感。
        用于右侧探头水印与 hero 图标位，透明底以便叠任意背景。 -->
-  <!-- 耳（横出）与内耳 -->
-  <polygon points="2,24 13,17 13,28" fill="#c9662a"/>
-  <polygon points="62,24 51,17 51,28" fill="#b85c25"/>
-  <polygon points="5,23 11,20 11,26" fill="#8a5a74"/>
-  <polygon points="59,23 53,20 53,26" fill="#7c4f66"/>
-  <!-- 小短角（原作的角很小） -->
-  <polygon points="14,12 20,4 23,14" fill="#c99a55"/>
-  <polygon points="50,12 44,4 41,14" fill="#b98a4e"/>
-  <!-- 额头与脸颊：三档橙色硬边光影 -->
-  <polygon points="15,9 49,9 32,24" fill="#f2954d"/>
-  <polygon points="15,9 12,26 32,24" fill="#e07b35"/>
-  <polygon points="49,9 52,26 32,24" fill="#d06f2e"/>
-  <polygon points="12,26 21,45 32,24" fill="#e8863d"/>
-  <polygon points="52,26 43,45 32,24" fill="#c9662a"/>
-  <polygon points="21,45 43,45 32,24" fill="#db7530"/>
-  <!-- 奶白大口鼻：两块硬边拼出下半张脸 -->
-  <polygon points="19,43 45,43 41,57 23,57" fill="#f6ead8"/>
-  <polygon points="23,57 41,57 32,63" fill="#e9dcc2"/>
-  <!-- 深棕粗眉（微斜，辨识度最高的特征） -->
-  <polygon points="17,28 28,25 28,29 18,31" fill="#5a3b22"/>
-  <polygon points="36,25 47,28 46,31 36,29" fill="#5a3b22"/>
-  <!-- 眼睛故意不对称 -->
-  <circle cx="24" cy="35" r="3.4" fill="#3a2a1c"/>
-  <circle cx="40" cy="35" r="2.3" fill="#3a2a1c"/>
-  <!-- 鼻孔：一点暗紫，呼应海报里的紫色蹄 -->
-  <ellipse cx="27.5" cy="50.5" rx="2" ry="2.6" fill="#6b4d5e"/>
-  <ellipse cx="36.5" cy="50.5" rx="2" ry="2.6" fill="#6b4d5e"/>
+  <!-- 耳（简化横出三角形） -->
+  <polygon points="2,22 12,18 12,30" fill="#e8823d"/>
+  <polygon points="62,22 52,18 52,30" fill="#d4772f"/>
+  <!-- 脸部主体：明亮橙色 6 面体（额头 + 左右脸颊各 2 面 + 中心鼻梁区） -->
+  <polygon points="12,18 32,12 52,18 32,32" fill="#ffa04d"/>
+  <polygon points="12,18 32,32 18,48" fill="#ff9966"/>
+  <polygon points="52,18 32,32 46,48" fill="#ff8c52"/>
+  <polygon points="18,48 32,32 32,56" fill="#ffa560"/>
+  <polygon points="46,48 32,32 32,56" fill="#f59550"/>
+  <!-- 米黄大口鼻：硬边梯形平涂 -->
+  <polygon points="20,46 44,46 38,60 26,60" fill="#ffe4c4"/>
+  <!-- 眼睛简化为小黑点（不对称） -->
+  <circle cx="22" cy="32" r="2.8" fill="#2a1a10"/>
+  <circle cx="42" cy="32" r="2.2" fill="#2a1a10"/>
+  <!-- 鼻孔：暗褐色 -->
+  <ellipse cx="28" cy="52" rx="1.8" ry="2.2" fill="#6b4d3e"/>
+  <ellipse cx="36" cy="52" rx="1.8" ry="2.2" fill="#6b4d3e"/>
 </svg>
