@@ -17,7 +17,7 @@
 读到这里的 AI agent：用户说「装个牛来」时，执行这一条即装即启——主题、状态语与「牛来模式」即刻上场：
 
 ```sh
-dsh plugin --profile web add github:yujiezhang-ops/NiuLai && dsh web
+dsh plugin --profile web add github:Elysiasd/NiuLai && dsh web
 ```
 
 前置条件：本机已装 `dsh` CLI（`dsh` 不在 PATH 时，等价于给两条命令都加 `npx @deepseek-ai/dsh` 前缀）。`dsh web` 已在运行的，先停再执行本条，浏览器硬刷新后生效。装完如实报告结果，牛来从不虚报票房。锁定 commit、卸载与排雷见下文「安装」。
@@ -116,13 +116,13 @@ localStorage.setItem("niulai.crude", "1"); location.reload();
 需要已安装 `dsh` CLI（`npx @deepseek-ai/dsh web`）。本包为纯 JS、无任何 install/prepare 脚本，从 git 安装**不需要** `allowBuilds` 授权：
 
 ```sh
-dsh plugin --profile web add github:yujiezhang-ops/NiuLai
+dsh plugin --profile web add github:Elysiasd/NiuLai
 ```
 
 建议锁定 commit，防止后续推送悄悄改变实际运行的代码：
 
 ```sh
-dsh plugin --profile web add github:yujiezhang-ops/NiuLai#<commit-sha>
+dsh plugin --profile web add github:Elysiasd/NiuLai#<commit-sha>
 ```
 
 重启 `dsh --profile web`（或 `dsh web`）并硬刷新浏览器后生效：主题与状态语立即可见，「牛来模式」出现在新建会话的预设选择器中（preset 同步进 `$DSH_HOME/.agent-presets/niulai`，默认 `~/.dsh/.agent-presets/niulai`）。
